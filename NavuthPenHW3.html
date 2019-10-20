@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registeration form</title>
+    <!-- <link rel="stylesheet" href="NavuthPenHW3.css"> -->
+    <style>
+        table {
+            border: 0px;
+            /* border-collapse: collapse; */
+            width: 100%;
+        }
+
+        #pob {
+            width: 100%;
+
+        }
+
+        #pa {
+            width: 100%;
+        }
+
+        #image01 {
+            width: 250px;
+            height: 270px;
+        }
+
+        #td001 {
+            width: 10%;
+            text-align: right;
+        }
+
+        #td002 {
+            width: 30%;
+        }
+
+        #td003 {
+            width: 40%;
+        }
+
+        #td004 {
+            width: 5%;
+        }
+
+        #td005 {
+            width: 30%;
+        }
+
+        #td006 {
+            width: 20%;
+        }
+
+        #td007 {
+            width: 45%;
+        }
+
+        #td008 {
+            width: 10%;
+        }
+
+        #td009 {
+            width: 40%;
+        }
+
+        #td010 {
+            width: 10%;
+        }
+
+        #td011 {
+            width: 40%;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 align="center">REGISTERATION FORM <br> Korea Software HRD Center Regiestration Form</h2>
+    <div class="header">
+        <!-- this is the header content information about HRD from REGISTRATION Form to facebook -->
+        <table>
+            <tr>
+                <td>March 17th,2017</td>
+                <td rowspan="5"><img src="https://i.imgur.com/8B19Ez5.png" id="image01" alt="Photo" align="right"></td>
+            </tr>
+            <tr>
+                <td>Korea Software HRD Center</td>
+                <!-- <td>4</td> -->
+            </tr>
+            <tr>
+                <td>#12,St 323, Sangkat Boeung kak II,Khan Toul Kork,Phnom Penh</td>
+                <!-- <td>6</td> -->
+            </tr>
+            <tr>
+                <td>Tel: (+855) 23 991 314,Fax:(+855) 23 991 315</td>
+                <!-- <td>8</td> -->
+            </tr>
+            <tr>
+                <td>Email: info.kshrd@gmail.com <br> &nbsp;&nbsp; &nbsp;&nbsp;
+                    facebook.com/ksignhrd</td>
+                <!-- <td>10</td> -->
+            </tr>
+        </table>
+    </div>
+    <div class="content">
+        <!-- this div content all from personal information to the end -->
+        <form action="#">
+            <div class="tbpersoninfo">
+                <!-- this div content only personal information part -->
+                <fieldset>
+                    <legend align="center">Personal Information</legend>
+                    <table>
+                        <tr>
+                            <td id="td001">Khmer ID Number:</td>
+                            <td id="td002"><input type="text" id="input001" name="ID"
+                                    placeholder="Input khmer ID Number" style="width: 99%;"></td>
+                            <td id="td003"></td>
+                        </tr>
+                        <tr>
+                            <td align="right">Fullname:</td>
+                            <td><input type="text" name="firstname" placeholder="Firstname" style="width: 99%;"></td>
+                            <td><input type="text" name="lastname" placeholder="Lastname" style="width: 100%;"></td>
+                        </tr>
+                        <tr>
+                            <td align="right">Gender:</td>
+                            <td><select name="Gender">
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td align="right">Date of Birth:</td>
+                            <td><input type="date" name="DOB"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td align="right"> Place of birth:</td>
+                            <td colspan="2"><textarea id="pob" name="POB" placeholder="Place of Birth"
+                                    rows="1.8"></textarea></td>
+                            <!-- <td>15</td> -->
+                        </tr>
+                        <tr>
+                            <td align="right">Permanent address:</td>
+                            <td colspan="2" rowspan="2"><textarea id="pa" name="PA" rows="5"></textarea></td>
+                            <!-- <td>18</td> -->
+                        </tr>
+                    </table>
+
+                </fieldset>
+            </div>
+            <div class="contact">
+                <!-- this div content the contact part -->
+                <fieldset>
+                    <legend align="center">Contact</legend>
+                    <table border="0">
+                        <tr>
+                            <td id="td004" align="right">Contact:</td>
+                            <td id="td005"><input type="text" name="contact" placeholder="Phone Number"
+                                    style="width: 99%;"></td>
+                            <td id="td006" align="left">Emergency Contact:</td>
+                            <td id="td007"><input type="text" name="EMGcontact" placeholder="Emergency Contact"
+                                    style="width:100%"></td>
+                        </tr>
+                        <tr>
+                            <td align="right">Email:</td>
+                            <td colspan="3"><input type="email" name="email" placeholder="Email" style="width: 100%;">
+                            </td>
+                            <!-- <td>7</td> -->
+                            <!-- <td>8</td> -->
+                        </tr>
+                    </table>
+                </fieldset>
+            </div>
+            <div class="background">
+                <!-- this div content family background part -->
+                <fieldset>
+                    <legend align="center">Family background</legend>
+                    <table border="0">
+                        <tr>
+                            <td id="td008" align="right"> Father name:</td>
+                            <td id="td009"><input type="text" name="fathername" placeholder="Father name"
+                                    style="width: 98%;"></td>
+                            <td id="td010">Occupation:</td>
+                            <td id="td011"><input type="text" name="fatherjob" style="width:100%"
+                                    placeholder="occupation"></td>
+                        </tr>
+                        <tr>
+                            <td align="right">Address:</td>
+                            <td colspan="3"><textarea name="fatherAddress" rows="3" style="width: 100%;"></textarea>
+                            </td>
+                            <!-- <td>7</td> -->
+                            <!-- <td>8</td> -->
+                        </tr>
+                        <tr>
+                            <td align="right">Mother name:</td>
+                            <td><input type="text" name="mothername" placeholder="Mother name" style="width: 98%;"></td>
+                            <td>Occupation:</td>
+                            <td><input type="text" name="motherjob" placeholder="Occupation" style="width: 100%;"></td>
+                        </tr>
+                        <tr>
+                            <td align="right">Address:</td>
+                            <td colspan="3"><textarea name="motherAdress" rows="3" style="width: 100%;"></textarea></td>
+                            <!-- <td>15</td> -->
+                            <!-- <td>16</td> -->
+                        </tr>
+                    </table>
+                </fieldset>
+            </div>
+            <div class="typeofcourse">
+                <!-- this div content type of course part -->
+                <fieldset>
+                    <legend align="center">Type of course</legend>
+                    <h4 align="center">Starting Date: <input type="radio" name="startDate" value="ITE Course 2018"> ITE
+                        Course 2018 <input type="radio" name="startDate" value="Short Course 2018">Short Course 2018
+                    </h4>
+                </fieldset>
+            </div>
+            <div class="formfooter" align="center">
+                <!-- this div content submit and reset button -->
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
