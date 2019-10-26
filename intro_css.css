@@ -1,0 +1,42 @@
+h1 {
+    color: rgb(73, 35, 117);
+    /* background-color: gray; */
+    text-align: center;
+}
+
+.color {
+    color: red;
+    background-color: rosybrown;
+    text-align: right;
+}
+body{
+    background-color: gray;
+}
+#demo{
+    text-align: left;
+    color:hotpink;
+}
+/* nested element selector */
+div h1.heading1{
+    color: red;
+}
+/* nested element selector with selected child  */
+div > h1{
+    border : 4px dashed red;
+    background-color: lightblue;
+}
+/* attribute element */
+a[target="_new"]{
+    background-color: yellow;
+}
+
+input[type="text"]{
+    background-color: rgb(43, 12, 12);
+    color: white;
+}
+h1[title~="flower"]{
+    color: rgb(7, 6, 7);
+}
+h1[title|="flower"]{
+    background-color: saddlebrown;
+}
