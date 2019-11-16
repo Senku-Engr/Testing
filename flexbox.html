@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .box{
+        width: 200px;
+        height: 200px;
+        background-color: lightblue;
+        margin: 10px;
+    }
+    .container{
+        display:flex;
+        /* flex-direction: row; */
+        /* flex-wrap: wrap; */
+        flex-flow:row wrap;
+        justify-content: space-evenly;
+    }
+    .six{
+        flex-grow:2;
+    }
+    @media screen and (max-width: 575px){
+        body{
+            background-color: black;
+        }
+        .container{
+            flex-flow: column wrap;
+            /* justify-content: center; */
+            align-items: center;
+        }
+        .box{
+            background-color: purple;
+        }
+        .one{
+            order: 4;
+        }
+        .two{
+            order: 2;
+        }
+        .three{
+            order: 0;
+        }
+        .four{
+            order: 100;
+        }
+        .five{
+            order: -3;
+        }
+        .six{
+            order: 1;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box one">1 </div>
+        <div class="box two">2 </div>
+        <div class="box three">3 </div>
+        <div class="box four">4 </div>
+        <div class="box five">5 </div>
+        <div class="box six">6 </div>
+    </div>
+</body>
+</html>

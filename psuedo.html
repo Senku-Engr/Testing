@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input:checked+label {
+            background-color: green;
+        }
+
+        input:enabled {
+            background-color: yellow;
+        }
+
+        input:disabled {
+            background-color: green;
+        }
+
+        input[type="email"]:invalid {
+            background-color: red;
+            color: white;
+        }
+
+        input[type="email"]:valid {
+            background-color: white;
+        }
+
+        h1:first-child {
+            background-color: blue;
+        }
+        
+        h1:last-of-type{
+            background-color: gray;
+        }
+        h1:nth-of-type(3){
+            background-color: purple;
+        }
+        p::first-letter{
+            color: red;
+            font-size: 100px;
+        }
+        p::first-line{
+            font-variant: small-caps;
+        }
+        h2::before{
+            content: "baka ";
+        }
+        h2::after{
+            content: " hello";
+        }
+        h2::selection{
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ohayo</h1>
+    <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque voluptatum ex dolorem quasi fuga eius nam consectetur excepturi numquam voluptas eveniet rem libero laborum tempore, placeat itaque dolores sunt mollitia?</h2>
+    <input type="checkbox" name="" id="">
+    <label for="">html</label>
+    <input type="checkbox" name="" id="">
+    <label for="">css</label>
+    <input type="text" name="" id="" disabled>
+    <input type="text" name="" id="">
+
+    <input type="email" name="" id="">
+
+    <h1>ohayo</h1>
+    <h1>ohayo</h1>
+    <h1>ohayo</h1>
+    <h1>ohayo</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis aliquam nobis temporibus, molestias dolorum dicta quas nesciunt nemo molestiae consectetur velit inventore eligendi aut, modi culpa obcaecati quisquam exercitationem!</p>
+</body>
+
+</html>
