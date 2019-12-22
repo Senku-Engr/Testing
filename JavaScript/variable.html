@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="carname">
+    <button id="btn">Click me</button>
+    <h1 id="content">Content me</h1>
+    <script>
+        // default value of var is undefined
+        var car = document.getElementById('carname')
+        var btn = document.getElementById('btn')
+        var heading = document.getElementById('content')
+        var content = " "
+        btn.onclick = function(){
+          //  alert(car.value)
+            
+            content += `Value form user : <span style="color:red">${car.value}  </span> <br>`
+            console.log(content);
+            heading.innerHTML = content;
+            car.value= ""
+        }
+        // variable let change value ban but not variable commonly use 
+        // variabel const cant change value or variable must initialize value at the declaration
+
+        let animal;
+        animal = 'dog'
+        console.log(animal)
+        const person = 'dara'
+   //     let person = 'daro'
+        console.log(person)
+        var user = {
+            firstname: "john",
+            lastname: "wick",
+        }
+        car.value = user.lastname
+
+    </script>
+</body>
+</html>

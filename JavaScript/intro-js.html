@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="heading">welcome to new generation</h1>
+    <button onclick="document.getElementById('heading').style.color='yellow'">color</button>
+    <button onclick="document.getElementById('heading').innerHTML='testing 1 2 3'">change content</button>
+    <button ondblclick="alert('omae wa mou')">react event</button>
+    <button
+        onclick="document.getElementById('image').src='https://ufogiant.com/wp-content/uploads/2019/08/New-Mexico-Sky.jpg'">img</button>
+        
+    <img src="https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547__340.jpg" id="image" alt="">
+
+    <script>
+        // write into html output
+        document.write('<h1 align="center" style="color:green">welcome to js </h1>')
+        //change image in html
+
+        var headings = document.getElementById('heading');
+        headings.style.color = 'lightblue';
+        headings.style.backgroundColor = 'black';
+    </script>
+</body>
+
+</html>

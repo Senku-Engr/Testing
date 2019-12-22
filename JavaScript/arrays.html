@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row" id="row">
+
+
+        </div>
+    </div>
+    <script>
+
+        //[] domnag array
+        //{} domnang object
+        // let arr = new Array();
+        // let arrr = ["country", " road", " take", " me", " home"];
+        // for (i = 0; i < arrr.length; i++) {
+        //     document.write(arrr[i]);
+        // }
+        // for in return index
+        // for of return value
+        // document.write('<br>');
+
+        // let j = 0;
+        // while (j < arrr.length) {
+        //     document.write(arrr[j]);
+        //     j++;
+        // }
+
+        // document.write('<br>');
+        // let k = 0;
+        // do{
+        //     document.write(arrr[k]);
+        //     k++;
+        // }while(k<arrr.length);
+
+        // document.write('<bar>');
+        // for(a in arrr){
+        //     document.write(arrr[a]);
+        // }
+
+        let ara = {
+            name: 'jon',
+            gender: 'male'
+        }
+
+        let article = [
+            {
+                name: 'Harry Potter',
+                gender: 'female',
+                add: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm0na9Paxs62nAUFCmXnq4w44HzAYQ0P6ZSKZGNKaFoLZDkMjm&s'
+            },
+            {
+                name: 'Hermione granger',
+                gender: 'male',
+                add: 'https://backgroundcheckall.com/wp-content/uploads/2018/10/photo-with-background-5.jpg'
+            },
+            {
+                name: 'Ronald Wesley',
+                gender: 'female',
+                add : 'https://images.pexels.com/photos/949587/pexels-photo-949587.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+            }
+        ]
+        // for(a in article){
+        //   console.log(article[a].name);
+        // }
+        let content = ''
+        let r = document.getElementById('row');
+        for (a of article) {
+            content += `
+            <div class="col-12 col-sm-12 col-md-3 col-lg-4">
+                <!-- Card -->
+                <div class="card">
+
+                    <!-- Card image -->
+                    <div class="view overlay">
+                        <img class="card-img-top"
+                            src="${a.add}"
+                            alt="Card image cap">
+                        <a href="#!">
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+
+                    <!-- Card content -->
+                    <div class="card-body">
+
+                        <!-- Title -->
+                        <h4 class="card-title">${a.name}</h4>
+                        <!-- Text -->
+                        <p class="card-text">${a.gender}</p>
+                        <!-- Button -->
+                        <a href="#" class="btn btn-primary">Button</a>
+
+                    </div>
+
+                </div>
+                <!-- Card -->
+            </div>
+            `
+        }
+        r.innerHTML = content;
+    </script>
+</body>
+
+</html>

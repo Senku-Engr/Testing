@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="tiger" onclick="player(this)">tiger</div>
+    <div id="crab" onclick="player(this)">crab</div>
+    <div id="lobster" onclick="player(this)">lobster</div>
+    <div id="rooster" onclick="player(this)">rooster</div>
+    <div id="fish" onclick="player(this)">fish</div>
+    <div id="klouk" onclick="player(this)">klouk</div>
+    <button id="btn" onclick="player(this)">bet</button>
+    <script>
+        let btn = document.getElementById('btn')
+        let pid = ''
+        let arr = new Array()
+        let n = 0
+        function player(id) {
+            pid = id.getAttribute('id')
+            arr[n] = id.getAttribute('id')
+
+            if (pid == 'tiger') {
+                pid = 1
+                arr[n] = 1
+            } else if (pid == 'crab') {
+                pid = 2
+                arr[n] = 2
+            } else if (pid == 'lobster') {
+                pid = 3
+                arr[n] = 3
+            } else if (pid == 'rooster') {
+                pid = 4
+                arr[n] = 4
+            } else if (pid == 'fish') {
+                pid = 5
+                arr[n] = 5
+            } else if (pid == 'klouk') {
+                pid = 6
+                arr[n] =6
+            }
+            console.log(pid)
+            console.log(arr[n])
+
+            n + 1
+        }
+        let i =0
+        function result(output, arr) {
+            for(i;i<n;i++){
+            if (output == arr[i]) {
+                console.log('you win')
+            } else {
+                console.log('you lost')
+            }
+            }
+        }
+
+        function start() {
+            let output = Math.ceil(Math.random() * 6)
+            console.log(output)
+            result(output, arr)
+        }
+
+        btn.onclick = function () {
+            start()
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="a" placeholder="A">
+    <input type="text" name="" id="b" placeholder="B">
+    <!-- <input type="text" name="" id="Result" placeholder="Result"> -->
+    <h1 id="Result"> hahahah</h1>
+    <button id="plus">+</button>
+    <button id="minus">-</button>
+    <button id="divide">/</button>
+    <button id="multiply">*</button>
+    <script>
+        let aa = document.getElementById('a')
+        let bb = document.getElementById('b')
+        let r = document.getElementById('Result')
+       
+       let plus = (a,b) => {
+           r.innerHTML = `${a+b}`
+       }
+       let minus = (a,b) => {
+           r.innerHTML = `${a-b}`
+       }
+       let divide = (a,b) => {
+           r.innerHTML = `${a/b}`
+       }
+       let mul = (a,b) => {
+           r.innerHTML = `${a*b}`
+       }
+       let btnplus = document.getElementById('plus')
+       let btnminus = document.getElementById('minus')
+       let btndivide = document.getElementById('divide')
+       let btnmul = document.getElementById('multiply')
+       btnplus.onclick = function(){
+           plus(parseInt(aa.value), parseInt(bb.value))
+       }
+       btnminus.onclick = function(){
+           minus(parseInt(aa.value), parseInt(bb.value))
+       }
+       btndivide.onclick = function(){
+           divide(parseInt(aa.value), parseInt(bb.value))
+       }
+       btnmul.onclick = function(){
+           mul(parseInt(aa.value), parseInt(bb.value))
+       }
+       
+
+        
+    </script>
+</body>
+</html>

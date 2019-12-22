@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="num">
+    <button id="btn">Bet</button>
+    <p id="pp"></p>
+    <p id="win"></p>
+    <script>
+        let tnum = document.getElementById('num')
+        let btnbet = document.getElementById('btn')
+        let p = document.getElementById('pp')
+        let pi = Math.PI
+        let ln = Math.LN10
+        let win = document.getElementById('win')
+        console.log(pi)
+        console.log(ln)
+        // round   yok lek no kbeas
+        // math.ceil always round up
+        // math.floor always round down
+        // math.round follow stand round
+
+        btnbet.onclick = function () {
+            let rvalue = Math.round(Math.random() * 10)
+            console.log(rvalue)
+            p.innerHTML = rvalue
+            if (rvalue == tnum.value) {
+                win.innerHTML = 'Congratulation you win'
+            }else{
+                win.innerHTML = 'tooooooooo bad try again laterrrrr'
+            }
+        }
+    </script>
+</body>
+
+</html>

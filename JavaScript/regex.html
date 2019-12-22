@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-center d-md-flex justify-content-center">
+            <div class="col-12 col-md-4">
+                <!-- Default form login -->
+                <form class="text-center border border-light p-5" action="" id="form">
+
+                    <p class="h4 mb-4">Sign in</p>
+                    <!-- Email -->
+
+                    <p id="MSGUSER"></p>
+                    <input type="text" id="usr" class="form-control mb-4" placeholder="Username">
+
+                    <!-- Password -->
+                    <p id="msgsname"></p>
+                    <input type="text" id="sname" class="form-control mb-4" placeholder="School Name">
+
+                    <p id="msgpassword"></p>
+                    <input type="text" id="password" placeholder="Password
+                " class="form-control mb-4">
+
+                    <p id="msgconfirmpassword"></p>
+                    <input type="text" class="form-control mb-4" id="cpassword" placeholder="Confirm Password">
+                    <div class="d-flex justify-content-around">
+                        <div>
+                            <!-- Remember me -->
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                                <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+                            </div>
+                        </div>
+                        <div>
+                            <!-- Forgot password -->
+                            <a href="">Forgot password?</a>
+                        </div>
+                    </div>
+
+                    <!-- Sign in button -->
+                    <button class="btn btn-info btn-block my-4" type="submit" id="btn">Sign in</button>
+
+                    <!-- Register -->
+                    <p>Not a member?
+                        <a href="">Register</a>
+                    </p>
+
+                    <!-- Social login -->
+                    <p>or sign in with:</p>
+
+                    <a href="#" class="mx-2" role="button"><i class="fab fa-facebook-f light-blue-text"></i></a>
+                    <a href="#" class="mx-2" role="button"><i class="fab fa-twitter light-blue-text"></i></a>
+                    <a href="#" class="mx-2" role="button"><i class="fab fa-linkedin-in light-blue-text"></i></a>
+                    <a href="#" class="mx-2" role="button"><i class="fab fa-github light-blue-text"></i></a>
+
+                </form>
+                <!-- Default form login -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let usr = document.getElementById('usr');
+        let sname = document.getElementById('sname');
+        let password = document.getElementById('password');
+        let cpassword = document.getElementById('cpassword');
+        let btn = document.getElementById('btn');
+        let msgUser = document.getElementById('MSGUSER')
+        let msgsname = document.getElementById('msgsname')
+        let msgpw = document.getElementById('msgpassword')
+        let msgcpw = document.getElementById('msgconfirmpassword')
+        let space = /[\s]/gi
+        let symbol = /[\W]/gi
+        let number = /[0-9]/gi
+        let char = /[a-z]/gi
+        let f = document.getElementById('form')
+
+        function validate(username) {
+            if (username == "") {
+                msgUser.innerHTML = 'Username is Blank'
+            }
+            if( space.test(username) == true){
+                msgUser.innerHTML = 'cannot put space'
+            }
+        }
+        function vsname(vsname) {
+            if(vsname == ""){
+                msgsname.innerHTML = 'cannot be blank'
+            }
+            if(symbol.test(vsname) == true){
+                msgsname.innerHTML = 'cannot containt symbol'
+            }
+        }
+        
+        function vpassword(vpw){
+            if(vpw == ""){
+                msgpw.innerHTML= 'cannot be blank'
+            }
+            if(space.test(vpw) == true){
+                msgpw.innerHTML = 'cannot put space in password'
+            }
+        }
+        function vcpassword(vcpw,vpw){
+            if(vcpw == ""){
+                msgcpw.innerHTML = 'cannot be blank'
+            }
+            if(vcpw != vpw){
+                msgcpw.innerHTML = 'Must be the same as Password'
+            }
+        }
+
+        f.onsubmit = function (event) {
+            event.preventDefault()
+            validate(usr.value)
+            vsname(sname.value)
+            vpassword(password.value)
+            vcpassword(cpassword.value,password.value)
+        }
+
+
+    </script>
+</body>
+
+</html>

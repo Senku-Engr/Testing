@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="tt">
+    <button id="btnn">Click me</button>
+    <button id="btn2">hahahahahh</button>
+    <button id="btn3">substring</button>
+    <button id="btn4">phone number</button>
+    <p id="ppp"></p>
+
+    <script>
+        let t = document.getElementById('tt')
+        let btn = document.getElementById('btnn')
+        let btn1 = document.getElementById('btn2')
+        let btn3 = document.getElementById('btn3')
+        let btn4 = document.getElementById('btn4')
+        let p = document.getElementById('ppp')
+        // fixed on hello
+        btn.onclick = function() {
+            let ttt = t.value
+            let n = ttt.indexOf('hello')
+            if(n>0){
+                alert("you write hello")
+            }
+        }
+
+        btn1.onclick = function(){
+            if(t.value.match(/[hello]/gi) != null){
+                alert("hello")
+            }else{
+                alert("no hello")
+            }
+        }
+
+        btn3.onclick = function(){
+            let domain = t.value.split('/')
+            document.write(`you got the product from : ${domain[2].substr(4, domain[2].length-4)}`)
+            console.log(domain[2].substr(4, domain[2].length-4))
+        }
+        /// domain[2].substr(4, domain[2].length-4)
+ 
+        btn4.onclick = function(){
+            let phone = t.value
+            if(phone[0] == '0'){
+                console.log(phone.substr(1, phone.length-1))
+                p.innerHTML = `(+855) ${phone.substr(1, phone.length-1)}`
+            }else{
+                console.log(phone)
+                p.innerHTML = `(+855) ${phone.substr(1, phone.length-1)}`
+
+            }
+        }
+    </script>
+</body>
+</html>

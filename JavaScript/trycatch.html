@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="msg"></p>
+    <input type="text" id="usr">
+    <button id="btn">submit</button>
+
+    <script>
+        let usr = document.getElementById('usr');
+        let btn = document.getElementById('btn');
+        let msg = document.getElementById('msg')
+        // define instance of regex 
+        // let patt = new RegExp('[!@#$%^&*-+]','i')
+        let patt = new RegExp('[0-9]', 'gi')
+        // let patt1 = /[\w]/gi    // word character: character and number         check sot only symbol cannot be mix
+        let patt1 = /[\W]/gi    // non word :  symbol       can be mix with character and number 
+        let s = /[\s]/gi
+        btn.onclick = function () {
+            // try{
+            //     validiateuser(usr.value)
+            // }catch(e){
+            //     console.log(e)
+            //     msg.innerHTML = e
+            //     msg.style.fontSize = '25px'
+            //     msg.style.color = 'red'
+            // }
+            // if (patt.test(usr.value)==true){
+            //     msg.innerHTML = '<i> username cannot contain symbol </i>'
+            // }
+            // else{
+            //     msg.innerHTML = 'oke kayo'
+            // }
+            if (usr.value.match(s)== null) {
+                msg.innerHTML = '<i> waganawa megumin </i>'
+            }
+            else {
+                msg.innerHTML = 'oke kayo'
+            }
+
+        }
+        function validiateuser(username) {
+            if (username == "") {
+                throw `<i> *Username can't be blank</i>`
+            } else if (username.length > 10) {
+                throw `<i> *out of range </i>`
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* .box {
+            background-color: rgb(83, 44, 44);
+            color: white;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+        }
+        .container {
+            background-color: red;
+            display: flex;
+            flex-flow:row wrap;
+
+            justify-content: space-evenly;
+        } */
+
+
+        
+        @media screen and (min-width: 1201px){
+            .container {
+            display: flex;
+            /* flex-direction: row; */
+            /* flex-wrap: wrap; */
+            flex-flow: row wrap;
+            justify-content: center;
+        }
+
+        .one {
+            width: 31%;
+            height: 50px;
+            background-color: lightblue;
+            margin: 3px;
+            flex-grow: 2;
+        }
+
+        .two {
+            width: 31%;
+            height: 50px;
+            background-color: lightblue;
+            margin: 3px;
+            flex-grow: 2;
+        }
+
+        .three {
+            width: 31%;
+            height: 50px;
+            background-color: lightblue;
+            margin: 3px;
+            flex-grow: 2;
+        }
+
+        .four {
+            width: 31%;
+            height: 600px;
+            background-color: lightblue;
+            margin: 3px;
+            flex-grow: 2;
+        }
+
+        .five {
+            width: 31%;
+            height: 600px;
+            background-color: lightblue;
+            margin: 3px;
+            flex-grow: 2;
+        }
+
+        .six {
+            width: 31%;
+            height: 600px;
+            background-color: lightblue;
+            margin: 3px;
+            flex-grow: 2;
+        }
+            
+        }
+        @media screen and (max-width: 1200px) {
+            .container {
+            display: flex;
+            /* flex-direction: row; */
+            /* flex-wrap: wrap; */
+            flex-flow: row wrap;
+            justify-content: center;
+        }
+            .one {
+                width: 31%;
+                height: 50px;
+                background-color: lightblue;
+                margin: 3px;
+                flex-grow: 2;
+                order: 2;
+            }
+
+            .two {
+                width: 31%;
+                height: 50px;
+                background-color: lightblue;
+                margin: 3px;
+                flex-grow: 2;
+                order: 3;
+            }
+
+            .three {
+                width: 31%;
+                height: 50px;
+                background-color: lightblue;
+                margin: 3px;
+                flex-grow: 2;
+                order: 4;
+            }
+
+            .four {
+                width: 31%;
+                height: 600px;
+                background-color: lightblue;
+                margin: 3px;
+                flex-grow: 2;
+                order: 5;
+            }
+
+            .five {
+                width: 31%;
+                height: 600px;
+                background-color: lightblue;
+                margin: 3px;
+                flex-grow: 2;
+                order: 6;
+            }
+
+             .six {
+                width: 100%;
+                height: 500px; 
+                background-color: lightblue;
+                margin: 3px;
+                flex-grow: 2;
+                order: 1;
+                background-image: url(http://www.nerdinfinite.com/wp-content/uploads/bfi_thumb/Marvel-Collection-of-Character-Posters-Infinity-War-2018-nmw9zxipbb47xz7t2nfli0mv58bxyrpxskr8tos2d4.jpg);
+                
+                background-size: contain;
+                background-repeat: no-repeat;
+                /* visibility:inherit; */
+                /* visibility: hidden; */
+                /* width: 31%;
+                height: 600px;
+              background-color: lightblue;
+             margin: 3px;
+                flex-grow: 2;
+                visibility: hidden; */
+            } 
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box one">1 </div>
+        <div class="box two">2 </div>
+        <div class="box three">3 </div>
+
+        <div class="box four">4 </div>
+        <div class="box five">5 </div>
+        <div class="box six">6 </div>
+        <!-- <div class="box six">
+            <img src="http://your-image.jpg" style="visibility: hidden;" />
+           </div> -->
+    </div>
+</body>
+
+</html>
