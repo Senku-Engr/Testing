@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css" rel="stylesheet">
+
+
+    <!-- sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+    <!-- boostrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- link css from toastr -->
+    <link rel="stylesheet" href="../toastr/toastr.min.css">
+</head>
+
+<body>
+
+
+
+    <!-- https://cdnjs.com/             search jq copy script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <!-- link js from toastr -->
+    <script src="../toastr/toastr.min.js"></script>
+
+
+
+    <div class="container">
+        <div class="row d-flex justify-content-center d-md-flex justify-md-content-center">
+            <div class="col-12 col-md-6">
+                <!-- Default form login -->
+                <form class="text-center border border-light p-5 mt-4" action="" id="form">
+
+                    <p class="h4 mb-4">Register</p>
+                    <p id="msgUser"></p>
+                    <input type="text" id="usr" class="form-control mb-4" placeholder="Enter Uername here ...">
+
+                    <p id="msgSchool"></p>
+                    <input type="text" id="sname" class="form-control mb-4" placeholder="Enter School name here....">
+
+                    <p id="msgPwd"></p>
+                    <input type="password" id="pwd" class="form-control mb-4" placeholder="Enter Password here....">
+
+
+                    <input type="password" id="cpwd" class="form-control mb-4" placeholder="Confrim Password here....">
+
+
+                    <div class="d-flex justify-content-around">
+                        <div>
+                            <!-- Remember me -->
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                                <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+                            </div>
+                        </div>
+                        <div>
+                            <!-- Forgot password -->
+                            <a href="">Forgot password?</a>
+                        </div>
+                    </div>
+
+                    <!-- Sign in button -->
+                    <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+
+                    <!-- Register -->
+                    <p>Not a member?
+                        <a href="">Register</a>
+                    </p>
+
+                    <!-- Social login -->
+                    <p>or sign in with:</p>
+
+                    <a href="#" class="mx-2" role="button">
+                        <i class="fab fa-facebook-f light-blue-text"></i>
+                    </a>
+                    <a href="#" class="mx-2" role="button">
+                        <i class="fab fa-twitter light-blue-text"></i>
+                    </a>
+                    <a href="#" class="mx-2" role="button">
+                        <i class="fab fa-linkedin-in light-blue-text"></i>
+                    </a>
+                    <a href="#" class="mx-2" role="button">
+                        <i class="fab fa-github light-blue-text"></i>
+                    </a>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row" id="row">
+
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+            </tr>
+        </thead>
+        <tbody id="tbodys">
+
+        </tbody>
+    </table>
+    <script>
+        let f = document.getElementById('form');
+        let user = document.getElementById('usr');
+        let sname = document.getElementById('sname');
+        let pwd = document.getElementById('pwd');
+        let cpwd = document.getElementById('cpwd');
+        let msgUser = document.getElementById('msgUser');
+        let msgSchool = document.getElementById('msgSchool');
+        let msgPwd = document.getElementById('msgPwd');
+        let tbd = document.getElementById('tbodys');
+        let row = document.getElementById('row');
+
+        let i = 1;
+        f.onsubmit = function (event) {
+            event.preventDefault()
+            validate(user.value)
+            validateSchool(sname.value)
+            validatePassword(pwd.value, cpwd.value)
+            if (validate(user.value) == false && validateSchool(sname.value) == false && validatePassword(pwd.value,
+                cpwd.value) == false) {
+                toastr.success('shinderu', 'hahahhah')
+                //  get value from input to create object
+                let person = {
+                    username: user.value,
+                    schoolname: sname.value,
+                    password: pwd.value
+                }
+                let tr = document.createElement('tr')
+                let td1 = document.createElement('td')
+                let td2 = document.createElement('td')
+                let td3 = document.createElement('td')
+                let td4 = document.createElement('td')
+                let button = document.createElement('button')
+
+                let btntitle = document.createTextNode('Delete')
+                let ID =  document.createTextNode(i)
+                i++
+                let txtschool = document.createTextNode(person.schoolname)
+                let textuser = document.createTextNode(person.username)
+                
+                button.className = 'btn btn-outline-danger waves'
+                button.appendChild(btntitle)
+                td1.appendChild(ID)
+                td2.appendChild(textuser)
+                td3.appendChild(txtschool)
+                td4.appendChild(button)
+
+                tr.appendChild(td1)
+                tr.appendChild(td2)
+                tr.appendChild(td3)
+                tr.appendChild(td4)
+                
+                //show to html table
+                tbd.appendChild(tr)
+            }
+        }
+
+        function sss() {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.value) {
+                    Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                    )
+                }
+            })
+        }
+
+        function validate(username) {
+            let patt = /[^a-z]/gi //accept any symbols, space, digit
+            if (username == "") {
+                msgUser.innerHTML = `<i>* username blank<i>`
+                msgUser.style.color = 'red'
+                msgUser.style.fontSize = '15px'
+                msgUser.style.textAlign = 'left'
+            } else if (username.match(patt) != null) {
+                msgUser.innerHTML = `<i>* username not allow any special character<i>`
+                msgUser.style.color = 'red'
+                msgUser.style.fontSize = '15px'
+                msgUser.style.textAlign = 'left'
+            } else {
+                msgUser.innerHTML = ``
+                return false
+            }
+        }
+
+        function validateSchool(sname) {
+            let patt = /[^a-z \s]/gi
+            if (sname == "") {
+                msgSchool.innerHTML = `<i>* school name blank<i>`
+                msgSchool.style.color = 'red'
+                msgSchool.style.fontSize = '15px'
+                msgSchool.style.textAlign = 'left'
+            } else if (sname.match(patt) != null) {
+                msgSchool.innerHTML = `<i>* school name not allow any symbols<i>`
+                msgSchool.style.color = 'red'
+                msgSchool.style.fontSize = '15px'
+                msgSchool.style.textAlign = 'left'
+            } else {
+                msgSchool.innerHTML = ''
+                return false
+            }
+        }
+
+        function validatePassword(pwd, cpwd) {
+            if (pwd == "" || cpwd == "") {
+                msgPwd.innerHTML = `<i>* pasword blank<i>`
+                msgPwd.style.color = 'red'
+                msgPwd.style.fontSize = '15px'
+                msgPwd.style.textAlign = 'left'
+            }
+            if (pwd.length > 7) {
+                msgPwd.innerHTML = `<i>* must be less than 7<i>`
+                msgPwd.style.color = 'red'
+                msgPwd.style.fontSize = '15px'
+                msgPwd.style.textAlign = 'left'
+            }
+            if (pwd != cpwd) {
+                msgPwd.innerHTML = `<i>* not match<i>`
+                msgPwd.style.color = 'red'
+                msgPwd.style.fontSize = '15px'
+                msgPwd.style.textAlign = 'left'
+            }
+            if (pwd == cpwd && pwd != "" && cpwd != "") {
+                msgPwd.innerHTML = ''
+                return false
+            }
+        }
+    </script>
+</body>
+
+</html>

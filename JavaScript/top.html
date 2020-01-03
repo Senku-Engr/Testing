@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #top {
+            color: tomato;
+            background-color: blue;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            display: none;
+        }
+
+        p {
+            margin: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="top">
+        <p>top</p>
+    </div>
+
+    <!-- we can also use button instead -->
+    <!-- <button id="top"> UP</button> -->
+
+
+    <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni consequuntur ad aspernatur distinctio assumenda
+        illo quisquam. Id laudantium ut, maiores itaque dignissimos nemo perferendis laborum exercitationem aperiam
+        voluptatem, sunt pariatur.</h1>
+    <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni consequuntur ad aspernatur distinctio assumenda
+        illo quisquam. Id laudantium ut, maiores itaque dignissimos nemo perferendis laborum exercitationem aperiam
+        voluptatem, sunt pariatur.</h1>
+    <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni consequuntur ad aspernatur distinctio assumenda
+        illo quisquam. Id laudantium ut, maiores itaque dignissimos nemo perferendis laborum exercitationem aperiam
+        voluptatem, sunt pariatur.</h1>
+    <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni consequuntur ad aspernatur distinctio assumenda
+        illo quisquam. Id laudantium ut, maiores itaque dignissimos nemo perferendis laborum exercitationem aperiam
+        voluptatem, sunt pariatur.</h1>
+    <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni consequuntur ad aspernatur distinctio assumenda
+        illo quisquam. Id laudantium ut, maiores itaque dignissimos nemo perferendis laborum exercitationem aperiam
+        voluptatem, sunt pariatur.</h1>
+    <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni consequuntur ad aspernatur distinctio assumenda
+        illo quisquam. Id laudantium ut, maiores itaque dignissimos nemo perferendis laborum exercitationem aperiam
+        voluptatem, sunt pariatur.</h1>
+    <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni consequuntur ad aspernatur distinctio assumenda
+        illo quisquam. Id laudantium ut, maiores itaque dignissimos nemo perferendis laborum exercitationem aperiam
+        voluptatem, sunt pariatur.</h1>
+    <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni consequuntur ad aspernatur distinctio assumenda
+        illo quisquam. Id laudantium ut, maiores itaque dignissimos nemo perferendis laborum exercitationem aperiam
+        voluptatem, sunt pariatur.</h1>
+    <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni consequuntur ad aspernatur distinctio assumenda
+        illo quisquam. Id laudantium ut, maiores itaque dignissimos nemo perferendis laborum exercitationem aperiam
+        voluptatem, sunt pariatur.</h1>
+    <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni consequuntur ad aspernatur distinctio assumenda
+        illo quisquam. Id laudantium ut, maiores itaque dignissimos nemo perferendis laborum exercitationem aperiam
+        voluptatem, sunt pariatur.</h1>
+    <script>
+        let btn = document.getElementById('top')
+        // window.onscroll refer to when the broswer is being scroll
+        window.onscroll = function () {
+            if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
+                // console.log(document.documentElement.scrollTop)
+                btn.style.display = 'block'
+            }else{
+                btn.style.display = 'none'
+            }
+        }
+        // document.body.scrolltop  use for safari
+        // document.documentelement.scrolltop use for chrome
+        // must use 2 of those in order to support
+        // position use fixed not absolute
+
+        btn.onclick = function(){ 
+            // the value 0 refer to the position of the scroll bar
+            document.body.scrollTop = 0            
+            document.documentElement.scrollTop = 0
+        }
+    </script>
+</body>
+
+</html>
