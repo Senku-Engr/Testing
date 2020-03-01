@@ -1,0 +1,7 @@
+{
+    "data": {
+        "username" : "john",
+        "age" : 29,
+        "gender" : true
+    }
+}

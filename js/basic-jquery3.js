@@ -45,10 +45,14 @@ function appendCard(a){
         </div>
         <!-- Card -->
     </div>  `
-    $('#row').html(content)
+
+    $('#row').fadeOut(100,function(){
+        $(this).html(content)
+    }).fadeIn(1000)
     
-    $('#title').val(''),
-    $('#desc').val(''),
-    $('#image').val('')
+    // $('#row').html(content)
+    // $('#title').val(''),
+    // $('#desc').val(''),
+    // $('#image').val('')
      
 }
